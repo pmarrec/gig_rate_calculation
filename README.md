@@ -69,5 +69,6 @@ In such cases, g was reported as undetermined, and k in the undiluted bottles re
   - if Chlad10 (<10um) or Chlau10 (>10um) concentrations are < 0.02 mg m-3, the rates for these size fractions are considered questionable (iode_quality_flag (QC flag) = 3)
   - if Chlad10per (<10um) or Chlau10per (>10um) relative contribution to total Chl-a are < 0.02 (2%), the rates for these size fractions are considered questionable (iode_quality_flag (QC flag) = 3)
   - Change mu0 = NaN (and mu_N_std) to n/d.\
+
 *Input: GIG-rates.csv files*\
 *Outputs: GIG-rates-qc.csv files.*
