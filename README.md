@@ -12,16 +12,16 @@ All the raw fluorescence data for each experiment are stored in the GIG-raw-data
 *Outputs: GIG-chl-calc-special.csv file*
 
 3) First step of the Chl-a data quality check (aka cleaning) using the **chl_grazing_experiment_fofa_cleaning** Matlab script. This first step is based on 2 criteria, for each experiment and filter type:
-  1) Fo/Fa within 1-3 range,
-  2) Fo/Fa witihn +/- 2 StdDev confidence interval for a given type of filter
+  - Fo/Fa within 1-3 range,
+  - Fo/Fa witihn +/- 2 StdDev confidence interval for a given type of filter
 All the values that don't fit these criteria are flagged as questionable with a iode_quality_flag = 3
 All the other values are flagged as good with a iode_quality_flag = 1\
 *Input: GIG-chl-calc-special.csv file*\
 *Outputs:GIG-fofa-clean.csv file*
 
 4) Second step of the Chl-a data quality check (aka cleaning) using the **chl_grazing_experiment_chl_conc_cleaning.m** Matlab script. This second step is based on 2 criteria:
-  1) All negative Chl-a conc are flagged as questionnable/suspect with a iode_quality_flag = 3
-  2) For each station/depth/treatment/triplicate values:
+  - All negative Chl-a conc are flagged as questionnable/suspect with a iode_quality_flag = 3
+  - For each station/depth/treatment/triplicate values:
 Each triplicate value should stand in the +/- 2 x %CV of the mean values of the triplicate with a QC flag=1. %CV is considered as the mean %CV obtained on a given type of filter (GFF/10um) at T0 and at TF.
 All the values that don't fit these criteria are flagged as questionable with a iode_quality_flag = 3
 All the other values are flagged as good with a iode_quality_flag = 1\
@@ -62,12 +62,12 @@ In such cases, g was reported as undetermined, and k in the undiluted bottles re
 *Outputs: GIG-rates.csv files.*\
 
 7) Quality check of the rates and renaming of some values of the rate data based using the **chl_grazing_experiments_rates_qc.m** Matlab script following these criteria:
-  0) Get only 2 decimal digits for the numeric values in the table
-  1) Change grazing rates < 0 (and g_std) to n/d and change grazing rates = NaN to n/d
-  2) Change muN = NaN (and mu_N_std) to n/n
-  3) if dilution (dilution level for the dilution experiment) > 0.4 (40%), iode_quality_flag (QC flag) = 3 (questionable). The optimal dilution level for the 2-points method is <40% (Morison and Menden-Deuer, 2017)
-  4) if Chlad10 (<10um) or Chlau10 (>10um) concentrations are < 0.02 mg m-3, the rates for these size fractions are considered questionable (iode_quality_flag (QC flag) = 3)
-  5) if Chlad10per (<10um) or Chlau10per (>10um) relative contribution to total Chl-a are < 0.02 (2%), the rates for these size fractions are considered questionable (iode_quality_flag (QC flag) = 3)
-  6) Change mu0 = NaN (and mu_N_std) to n/d.
+  - Get only 2 decimal digits for the numeric values in the table
+  - Change grazing rates < 0 (and g_std) to n/d and change grazing rates = NaN to n/d
+  - Change muN = NaN (and mu_N_std) to n/n
+  - if dilution (dilution level for the dilution experiment) > 0.4 (40%), iode_quality_flag (QC flag) = 3 (questionable). The optimal dilution level for the 2-points method is <40% (Morison and Menden-Deuer, 2017)
+  - if Chlad10 (<10um) or Chlau10 (>10um) concentrations are < 0.02 mg m-3, the rates for these size fractions are considered questionable (iode_quality_flag (QC flag) = 3)
+  - if Chlad10per (<10um) or Chlau10per (>10um) relative contribution to total Chl-a are < 0.02 (2%), the rates for these size fractions are considered questionable (iode_quality_flag (QC flag) = 3)
+  - Change mu0 = NaN (and mu_N_std) to n/d.
 *Input: GIG-rates.csv files*\
 *Outputs: GIG-rates-qc.csv files.*\
