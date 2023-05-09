@@ -37,7 +37,7 @@ k are caluclated from each TF values. Up to 6 k values are then obatined for eac
 Based on >0&200 (GFF) and >10&<200 (10um filters), >0&<10 (from difference between Chl-a conc. in >0&<200 and >10&<200 size fractions) Chl-a values are calculated and then corresponding k values. For each triplicate, Chl-a d10 triplcate values are calculated as the diffrenece between the mean Chl-a value on >0&<200 and individual triplicate Chl-a values of >10&<200.\ 
 Only data with QC = 1 are considered. If Chl-a d10 <0, then Chl-a conc and k = NaN.\
 *Input: CRUSIE-chl-grazing-experiments-clean.csv files*\
-*Outputs: CRUISE-chla-grazing-experiments-k-values.csv files.*\
+*Outputs: CRUISE-chla-grazing-experiments-k-values.csv files.*
 
 6) Calculation of the phytoplankton growth rates (mu0), microzooplankton grazing rates (g), apparent growth rates in nonamended nutrient treatment (wsw NoN, kNoN) and phytoplankton growth rates in nutrient amended treatments (muN = g + kN) using the **chl_grazing_experiments_rates.m** Matlab script.\
 Associted errors (std) were estimated for all these rates. Note that kNoN and muN were estimated only when there was apparent nutrient limitation.\
@@ -59,7 +59,7 @@ Thus, the average k_N represented mu_N and the average k_NoN represented mu_0. \
 A significant positive slope (i.e. higher growth in the WSW treatment than in the diluted) represents a violation of the method’s assumption. \
 In such cases, g was reported as undetermined, and k in the undiluted bottles represented mu_N and mu_0. Uncertainties relative to mu_N and mu_0 were estimated from the standard deviations observed on k_N and k_NoN triplicate values.\
 *Input: GIG-k-values.csv files*\
-*Outputs: GIG-rates.csv files.*\
+*Outputs: GIG-rates.csv files.*
 
 7) Quality check of the rates and renaming of some values of the rate data based using the **chl_grazing_experiments_rates_qc.m** Matlab script following these criteria:
   - Get only 2 decimal digits for the numeric values in the table
@@ -68,6 +68,6 @@ In such cases, g was reported as undetermined, and k in the undiluted bottles re
   - if dilution (dilution level for the dilution experiment) > 0.4 (40%), iode_quality_flag (QC flag) = 3 (questionable). The optimal dilution level for the 2-points method is <40% (Morison and Menden-Deuer, 2017)
   - if Chlad10 (<10um) or Chlau10 (>10um) concentrations are < 0.02 mg m-3, the rates for these size fractions are considered questionable (iode_quality_flag (QC flag) = 3)
   - if Chlad10per (<10um) or Chlau10per (>10um) relative contribution to total Chl-a are < 0.02 (2%), the rates for these size fractions are considered questionable (iode_quality_flag (QC flag) = 3)
-  - Change mu0 = NaN (and mu_N_std) to n/d.
+  - Change mu0 = NaN (and mu_N_std) to n/d.\
 *Input: GIG-rates.csv files*\
-*Outputs: GIG-rates-qc.csv files.*\
+*Outputs: GIG-rates-qc.csv files.*
