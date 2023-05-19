@@ -6,7 +6,7 @@
 % Fo/Fa cleaning:
 % 2 criteria, for each cast/depth:
 % 1) within 1-3 range,
-% 2) witihn +/- 1.5 StdDev confidence interval for a given type of filter
+% 2) witihn +/- 2 StdDev confidence interval for a given type of filter
 % GFF after screening with 200um mesh = >0&<200um
 % 10um after screening with 200um mesh = >10&<200um
 % All the values that don't fit these criteria are flagged as questionable
@@ -52,7 +52,7 @@ for n1=1:length(a1)
         % Fo/Fa cleaning
         % 2 criteria, for each cast/depth:
         % 1) within 1-3 range,
-        % 2) witihn +/- 1.5 StdDev confidence interval for a given type of filter
+        % 2) witihn +/- 2 StdDev confidence interval for a given type of filter
         % GFF after screening with 200um mesh = >0&<200um
         % 10um after screening with 200um mesh = >10&<200um
         % GFF without screening with 200um mesh = >0 (for EN627 L11-B)
@@ -69,8 +69,8 @@ for n1=1:length(a1)
         %confidence interval
         FoFa_avg=mean(FoFa);
         FoFa_std=std(FoFa);
-        FoFa_ulim=FoFa_avg+1.5*FoFa_std;
-        FoFa_llim=FoFa_avg-1.5*FoFa_std;
+        FoFa_ulim=FoFa_avg+2*FoFa_std;
+        FoFa_llim=FoFa_avg-2*FoFa_std;
 
         %Assigned a iode_quality flag (1=good, 3=questionable/suspect)
         %to the data based on the nan values, the threshold (1<x<3)

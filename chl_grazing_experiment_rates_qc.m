@@ -46,7 +46,8 @@ T1.iode_quality_flag=ones(height(T1),1);
 % 0) Ge only 2 decimal digits for the numeric values in the table
 T1.temperature_sampling=round(T1.temperature_sampling,2);
 T1.temperature_incubation_avg=round(T1.temperature_incubation_avg,2);
-T1.Chla=round(T1.Chla,2);
+T1.Chla_avg=round(T1.Chla_avg,2);
+T1.Chla_sd=round(T1.Chla_sd,2);
 T1.Chlad10=round(T1.Chlad10,2);
 T1.Chlau10=round(T1.Chlau10,2);
 T1.Chlad10per=round(T1.Chlad10per,2);
