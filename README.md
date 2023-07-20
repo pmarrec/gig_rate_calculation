@@ -58,7 +58,7 @@ When size fractionation at 10 µm was performed only on nutrient amended samples
 The uncertainty of g estimates was quantified from the mean standard deviation of k_dil, k_NoN and k_N.\
 g was set to 0 when negative g values not significantly different from 0 (t-test between k_dil and k_N, p<0.05) were obtained.\
 Thus, the average k_N represented mu_N and the average k_NoN represented mu_0 (Murrell et al., 2002; Chen et al. 2009).\
-Negative g values, significantly different from 0 (i.e. higher growth in the WSW treatment than in the diluted) represents a violation of the method's assumption.\ 
+Negative g values, significantly different from 0 (i.e. higher growth in the WSW treatment than in the diluted) represents a violation of the method's assumption.\
 *Input: GIG-k-values.csv files*\
 *Outputs: GIG-rates.csv files.*
 
